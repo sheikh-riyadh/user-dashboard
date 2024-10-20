@@ -5,22 +5,20 @@ import RightSide from "../components/Layout/RightSide";
 
 const MainLayout = () => {
   return (
-    <div className="flex h-full">
-      <div className="grow">
+    <div className="overflow-hidden">
+      <div className={`flex`}>
         <div>
-          <Header />
+          <LeftSide />
         </div>
-        <div className="flex">
-          <div className="bg-white">
-            <LeftSide />
-          </div>
-          <div className="h-screen overflow-y-auto custom-bar my_container">
+        <div className="w-full h-[calc(100vh)] overflow-y-auto bar-hidden">
+          <Header />
+          <div>
             <Outlet />
           </div>
         </div>
-      </div>
-      <div>
-        <RightSide />
+        <div>
+          <RightSide />
+        </div>
       </div>
     </div>
   );

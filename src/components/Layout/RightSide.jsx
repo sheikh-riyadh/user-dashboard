@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const RightSide = () => {
   return (
-    <div className="w-12 bg-white h-full pt-6 border">
+    <div className="w-12 h-full bg-white pt-6 border">
       <div className="flex flex-col gap-5 items-center justify-center">
         <Link>
           <FaBell className="text-lg" />
