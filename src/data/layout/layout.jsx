@@ -63,5 +63,20 @@ export const layout = {
       icon: <FaBoxOpen />,
       link: "/add-product",
     },
+    {
+      name: "Personal Information",
+      icon: <FaBoxOpen />,
+      link: "/personal-info",
+    },
+    {
+      name: "Business Information",
+      icon: <FaBoxOpen />,
+      link: "/business-info",
+    },
+    {
+      name: "Banner Information",
+      icon: <FaBoxOpen />,
+      link: "/banner-info",
+    },
   ],
 };
