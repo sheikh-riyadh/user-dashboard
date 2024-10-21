@@ -34,9 +34,8 @@ const BasicInfo = ({
           label={"Product Video URL"}
           required
           className={"bg-white border"}
-          {...register("product-url")}
+          {...register("productVideoURL")}
           placeholder="Product video url"
-          type="url"
         />
       </div>
 
@@ -45,7 +44,7 @@ const BasicInfo = ({
           label={"Product Title"}
           required
           className={"bg-white border"}
-          {...register("product-title")}
+          {...register("productTitle")}
           placeholder="Product title"
         />
       </div>
@@ -70,6 +69,7 @@ const BasicInfo = ({
       </span>
       <div>
         <Input
+          {...register("keyFeatures")}
           className={"bg-white border"}
           onKeyDown={handleProductKeyFeature}
           placeholder="Enter"

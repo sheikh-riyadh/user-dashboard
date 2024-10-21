@@ -11,7 +11,7 @@ const DescriptionInfo = ({ register, content, setContent }) => {
         <div>
           <TextArea
             className={"bg-white border h-36"}
-            {...register("short-description")}
+            {...register("shortDescription")}
             required
             label={"Short Description (within 50 words)"}
           />

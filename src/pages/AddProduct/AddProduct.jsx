@@ -3,18 +3,22 @@ import { useForm } from "react-hook-form";
 import BasicInfo from "../../components/AddProduct/BasicInfo";
 import DescriptionInfo from "../../components/AddProduct/DescriptionInfo";
 import StockPriceAndQuantity from "../../components/AddProduct/StockPriceAndQuantity";
+import JoditTextArea from "../../components/Common/JoditTextArea";
+import DeliveryInfo from "../../components/AddProduct/DeliveryInfo";
+import toast from "react-hot-toast";
 
 const AddProduct = () => {
-  const [productKeyFeatures, setProductKeyFeatures] = useState([]);
-  const [content, setContent] = useState("asfasfasfasfdasfasfd");
-  const { handleSubmit, register, setValue } = useForm();
+  const [keyFeatures, setKeyFeatures] = useState([]);
+  const [description, setDescription] = useState("");
+  const [additionalInfo, setAdditionalInfo] = useState("");
+  const { handleSubmit, register, setValue, watch } = useForm();
 
   const handleProductKeyFeature = (event) => {
     if (event.key === "Enter") {
       const data = event.target.value;
-      if (!productKeyFeatures.includes(data)) {
-        setProductKeyFeatures((prev) => [...prev, data]);
-        setValue("key-features");
+      if (!keyFeatures.includes(data)) {
+        setKeyFeatures((prev) => [...prev, data]);
+        setValue("keyFeatures");
       }
     }
   };
@@ -26,14 +30,18 @@ const AddProduct = () => {
   };
 
   const handleOnSubmit = (data) => {
-    console.log(data);
+    if (!keyFeatures.length || !description.length > 50) {
+      toast.error("Please filup all required value");
+      return;
+    }
+    console.log({ ...data, keyFeatures, description, additionalInfo });
   };
 
   const handleDeleteKeyFeatures = (deleteFeatureItem) => {
-    const restFeatures = productKeyFeatures.filter(
+    const restFeatures = keyFeatures.filter(
       (feature) => feature != deleteFeatureItem
     );
-    setProductKeyFeatures(restFeatures);
+    setKeyFeatures(restFeatures);
   };
 
   return (
@@ -53,16 +61,16 @@ const AddProduct = () => {
               <BasicInfo
                 handleDeleteKeyFeatures={handleDeleteKeyFeatures}
                 handleProductKeyFeature={handleProductKeyFeature}
-                productKeyFeatures={productKeyFeatures}
+                productKeyFeatures={keyFeatures}
                 register={register}
               />
             </div>
 
             <div className="border rounded-md overflow-hidden">
               <DescriptionInfo
-                content={content}
+                content={description}
                 register={register}
-                setContent={setContent}
+                setContent={setDescription}
               />
             </div>
 
@@ -72,6 +80,27 @@ const AddProduct = () => {
               </div>
               <div className="flex flex-col gap-1 p-5">
                 <StockPriceAndQuantity register={register} />
+              </div>
+            </div>
+
+            <div className="border rounded-md overflow-hidden">
+              <div className="mb-5 bg-stech text-white p-2">
+                <span>Additional Information</span>
+              </div>
+              <div className="flex flex-col gap-1 p-5">
+                <JoditTextArea
+                  content={additionalInfo}
+                  setContent={setAdditionalInfo}
+                />
+              </div>
+            </div>
+
+            <div className="border rounded-md overflow-hidden">
+              <div className="mb-5 bg-stech text-white p-2">
+                <span>Delivery Information</span>
+              </div>
+              <div className="flex flex-col gap-1 p-5">
+                <DeliveryInfo register={register} watch={watch} />
               </div>
             </div>
             <button>send</button>

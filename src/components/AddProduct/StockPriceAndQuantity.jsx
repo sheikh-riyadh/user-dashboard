@@ -29,7 +29,7 @@ const StockPriceAndQuantity = ({ register }) => {
           label={"Discount"}
           {...register("discount")}
           type="number"
-          min={"1"}
+          min={"0"}
         />
       </div>
     </div>

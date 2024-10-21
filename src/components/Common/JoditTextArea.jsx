@@ -12,7 +12,6 @@ const JoditTextArea = ({ content, setContent }) => {
     }),
     []
   );
-
   return (
     <JoditEditor
       ref={editor}
