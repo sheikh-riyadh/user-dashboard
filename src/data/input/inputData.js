@@ -67,4 +67,63 @@ export const inputData = {
       type: "password",
     },
   ],
+  addressData: [
+    {
+      label: "Full Name",
+      placeholder: "Full Name",
+      registerName: "fullName",
+      isRequired: true,
+      type: "text",
+    },
+    {
+      label: "Mobile Number",
+      placeholder: "Mobile Number",
+      registerName: "phoneNumber",
+      isRequired: true,
+      type: "number",
+    },
+    {
+      label: "Country",
+      placeholder: "Country Name",
+      registerName: "country",
+      isRequired: true,
+      type: "text",
+      data:["Bangladesh"]
+    },
+    {
+      label: "State",
+      placeholder: "Division",
+      registerName: "division",
+      isRequired: true,
+      type: "text",
+    },
+    {
+      label: "City",
+      placeholder: "City",
+      registerName: "city",
+      isRequired: true,
+      type: "text",
+    },
+    {
+      label: "Zipcode",
+      placeholder: "Zipcode",
+      registerName: "zipcode",
+      isRequired: true,
+      type: "number",
+    },
+    {
+      label: "Address line 1",
+      placeholder: "Address line 1",
+      registerName: "addressLine1",
+      isRequired: true,
+      type: "text",
+    },
+    {
+      label: "Address line 2",
+      placeholder: "Address line 2",
+      registerName: "addressLine2",
+      isRequired: true,
+      type: "text",
+    },
+  ],
 };

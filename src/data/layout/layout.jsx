@@ -1,12 +1,13 @@
 import {
   FaAddressCard,
+  FaExclamationCircle,
   FaHeart,
-  FaLock,
+  FaReply,
   FaShoppingBag,
   FaShoppingBasket,
   FaStar,
+  FaThumbsUp,
   FaUserCircle,
-  FaWallet,
 } from "react-icons/fa";
 import { MdWindow } from "react-icons/md";
 
@@ -28,11 +29,6 @@ export const layout = {
       link: "/edit-profile",
     },
     {
-      name: "Change Password",
-      icon: <FaLock />,
-      link: "/change-password",
-    },
-    {
       name: "Address",
       icon: <FaAddressCard />,
       link: "/address",
@@ -48,14 +44,24 @@ export const layout = {
       link: "/my-cart",
     },
     {
-      name: "Account Transaction",
-      icon: <FaWallet />,
-      link: "/account-transaction",
-    },
-    {
       name: "My Reviews",
       icon: <FaStar />,
       link: "/my-reviews",
+    },
+    {
+      name: "My Report",
+      icon: <FaExclamationCircle />,
+      link: "/my-report",
+    },
+    {
+      name: "Feedback",
+      icon: <FaThumbsUp />,
+      link: "/feedback",
+    },
+    {
+      name: "Back to main website",
+      icon: <FaReply />,
+      link: "https://user.captake.com/cart",
     },
   ],
 };
