@@ -1,6 +1,5 @@
 import {
   FaAddressCard,
-  FaBoxOpen,
   FaHeart,
   FaLock,
   FaShoppingBag,
@@ -57,26 +56,6 @@ export const layout = {
       name: "My Reviews",
       icon: <FaStar />,
       link: "/my-reviews",
-    },
-    {
-      name: "Add Product",
-      icon: <FaBoxOpen />,
-      link: "/add-product",
-    },
-    {
-      name: "Personal Information",
-      icon: <FaBoxOpen />,
-      link: "/personal-info",
-    },
-    {
-      name: "Business Information",
-      icon: <FaBoxOpen />,
-      link: "/business-info",
-    },
-    {
-      name: "Banner Information",
-      icon: <FaBoxOpen />,
-      link: "/banner-info",
     },
   ],
 };

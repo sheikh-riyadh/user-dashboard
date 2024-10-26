@@ -9,10 +9,6 @@ import EditProfile from "../pages/EditProfile/EditProfile";
 import Order from "../pages/Order/Order";
 import Review from "../pages/Review/Review";
 import Wishlist from "../pages/Wishlist/Wishlist";
-import AddProduct from "../pages/AddProduct/AddProduct";
-import PersonalInformation from "../pages/Business/PersonalInformation";
-import BusinessInformation from "../pages/Business/BusinessInformation";
-import BannerInformation from "../pages/Business/BannerInformation";
 
 const router = createBrowserRouter([
   {
@@ -58,22 +54,6 @@ const router = createBrowserRouter([
       {
         path: "wishlist",
         element: <Wishlist />,
-      },
-      {
-        path: "add-product",
-        element: <AddProduct />,
-      },
-      {
-        path: "personal-info",
-        element: <PersonalInformation />,
-      },
-      {
-        path: "business-info",
-        element: <BusinessInformation />,
-      },
-      {
-        path: "banner-info",
-        element: <BannerInformation/>,
       },
     ],
   },

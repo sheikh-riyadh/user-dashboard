@@ -1,9 +1,20 @@
-import { forwardRef } from "react";
+import { forwardRef, useState } from "react";
 import PropTypes from "prop-types";
 import cn from "../../utils/cn";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Input = forwardRef(
   ({ className, label = "", type = "text", ...rest }, ref) => {
+    const [changeType, setChangeType] = useState(type);
+
+    const handleTypeChange = () => {
+      if (changeType === "text") {
+        setChangeType("password");
+      } else {
+        setChangeType("text");
+      }
+    };
+
     return (
       <div className="flex flex-col gap-1">
         {label && (
@@ -11,15 +22,31 @@ const Input = forwardRef(
             {label} {rest?.required && <span className={"text-danger"}>*</span>}
           </label>
         )}
-        <input
-          className={cn(
-            `focus:outline-none bg-gray-100 w-full p-2 rounded-md`,
-            className
-          )}
-          {...rest}
-          type={type}
-          ref={ref}
-        />
+        <div className="flex items-center justify-between relative w-full">
+          <input
+            className={cn(
+              `focus:outline-none bg-gray-100 w-full p-2 rounded-md`,
+              className
+            )}
+            {...rest}
+            type={changeType}
+            ref={ref}
+          />
+          <div className="absolute right-0">
+            {type === "password" && (
+              <div
+                onClick={handleTypeChange}
+                className="p-2.5 flex items-end justify-end cursor-pointer"
+              >
+                {changeType == "text" ? (
+                  <FaEyeSlash className="text-2xl font-bold h-full" />
+                ) : (
+                  <FaEye className="text-2xl font-bold h-full" />
+                )}
+              </div>
+            )}
+          </div>
+        </div>
       </div>
     );
   }
