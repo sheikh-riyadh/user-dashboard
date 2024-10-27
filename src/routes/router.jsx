@@ -9,6 +9,8 @@ import EditProfile from "../pages/EditProfile/EditProfile";
 import Order from "../pages/Order/Order";
 import Review from "../pages/Review/Review";
 import Wishlist from "../pages/Wishlist/Wishlist";
+import Feedback from "../pages/Feedback/Feedback";
+import Report from "../pages/Report/Report";
 
 const router = createBrowserRouter([
   {
@@ -28,10 +30,6 @@ const router = createBrowserRouter([
         element: <Address />,
       },
       {
-        path: "my-cart",
-        element: <Cart />,
-      },
-      {
         path: "change-password",
         element: <ChangePassword />,
       },
@@ -44,12 +42,24 @@ const router = createBrowserRouter([
         element: <EditProfile />,
       },
       {
-        path: "order",
-        element: <Order />,
+        path: "feedback",
+        element: <Feedback />,
+      },
+      {
+        path: "my-cart",
+        element: <Cart />,
       },
       {
         path: "my-reviews",
         element: <Review />,
+      },
+      {
+        path: "order",
+        element: <Order />,
+      },
+      {
+        path: "my-report",
+        element: <Report />,
       },
       {
         path: "wishlist",
